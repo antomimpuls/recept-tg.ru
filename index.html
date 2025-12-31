@@ -44,7 +44,7 @@
                     const clientID = await new Promise((resolve) => {
                         let resolved = false;
                         try {
-                            window.ym(METRIKA_ID_PLACEHOLDER, 'getClientID', function(clientID) {
+                            window.ym(106091194, 'getClientID', function(clientID) {
                                 if (!resolved) {
                                     resolved = true;
                                     if (clientID && /^\d+$/.test(String(clientID))) {
@@ -140,7 +140,7 @@
 
             // API endpoint с параметром site_id для мультисайтовой системы
             const apiBase = 'https://api.pitanie-tg.ru';
-            const apiEndpoint = `${apiBase}/get_invite_link?client_id=${encodeURIComponent(startParam)}&site_id=SITE_ID_PLACEHOLDER`;
+            const apiEndpoint = `${apiBase}/get_invite_link?client_id=${encodeURIComponent(startParam)}&site_id=1`;
 
             try {
                 const response = await fetch(apiEndpoint);
@@ -525,8 +525,8 @@
     <!-- Яндекс.Метрика - будет добавлен после настройки через панель -->
     <script type="text/javascript">
         // Метрика будет добавлена динамически
-        const METRIKA_ID = 'METRIKA_ID_PLACEHOLDER';
-        if (METRIKA_ID !== 'METRIKA_ID_PLACEHOLDER') {
+        const METRIKA_ID = 106091194;
+        if (METRIKA_ID) {
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -561,14 +561,14 @@
                 }
 
                 const apiBase = 'https://api.pitanie-tg.ru';
-                const apiEndpoint = `${apiBase}/get_invite_link?client_id=${encodeURIComponent(startParam)}&site_id=SITE_ID_PLACEHOLDER`;
+                const apiEndpoint = `${apiBase}/get_invite_link?client_id=${encodeURIComponent(startParam)}&site_id=1`;
 
                 try {
                     const response = await fetch(apiEndpoint);
                     const data = await response.json();
 
                     if (data.success && data.invite_link) {
-                        if (typeof ym !== 'undefined' && METRIKA_ID !== 'METRIKA_ID_PLACEHOLDER') {
+                        if (typeof ym !== 'undefined' && METRIKA_ID) {
                             ym(METRIKA_ID, 'reachGoal', 'telegram_click');
                         }
                         window.location.href = data.invite_link;
