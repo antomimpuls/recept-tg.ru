@@ -149,8 +149,8 @@
                 if (data.success && data.invite_link) {
                     console.log('✅ Динамическая ссылка получена:', data.invite_link);
 
-                    if (typeof ym !== 'undefined') {
-                        ym(METRIKA_ID_PLACEHOLDER, 'reachGoal', 'telegram_click');
+                    if (typeof ym !== 'undefined' && METRIKA_ID) {
+                        ym(METRIKA_ID, 'reachGoal', 'telegram_click');
                     }
 
                     redirectTarget = data.invite_link;
