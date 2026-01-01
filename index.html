@@ -308,9 +308,48 @@
             font-weight: 500;
         }
 
+        /* Gallery */
+        .gallery {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
         /* Benefits */
         .benefits {
-            background: white;
+            background: #f5f7fa;
             padding: 80px 20px;
         }
 
@@ -408,6 +447,10 @@
             .final-cta h2 {
                 font-size: 32px;
             }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -447,6 +490,28 @@
                 <div class="stat-card">
                     <div class="stat-number">-10 кг</div>
                     <div class="stat-label">За месяц</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Попробуйте эти ПП-рецепты</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/antomimpuls/recept-tg.ru/main/04_100345_belkovyi-salat-s-tuncom-i-yaicom-pp_1747601550_9_xshzy41_max.jpg" alt="Белковый салат с тунцом и яйцом" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/antomimpuls/recept-tg.ru/main/a43836aacc07b30005ea61e974021c27.jpg" alt="ПП рецепт" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/antomimpuls/recept-tg.ru/main/b7788253e47f6d0135bce5981067f924.jpg" alt="ПП блюдо" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://raw.githubusercontent.com/antomimpuls/recept-tg.ru/main/ecca5beb972dcb1e8c74e871e59478dd.jpg" alt="Здоровый рецепт" loading="lazy">
                 </div>
             </div>
         </div>
